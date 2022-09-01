@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" />
+    <script type="text/javascript" src="./json/listVille.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div id="head">
+      <h1>Choisissez la météo de votre ville</h1>
+    </div>
+    <form action="" method="post">
+      <div class="centerElmts">
+        <input
+          type="text"
+          id="villeUser"
+          placeholder="Choisissez une ville ?"
+          autofocus
+        />
+        <button type="submit">Sa météo</button>
+      </div>
+    </form>
+    <div class="centerElmts">
+      <div id="afficheMeteo"></div>
+    </div>
+  </body>
+</html>
