@@ -12,20 +12,28 @@ do {
 } while (datajson[i]);
 
 // Pour tester ce code tout aussi merveilleux
-// console.log(pays);
+//console.log(pays);
 
 // création d'un tableau des villes (unique) contenu sur cette merveilleuse api météo
 
-const villes = new Array();
-var i = 0;
-do {
-  if (villes.length <= 0) {
-    villes.push(datajson[i].name);
-  } else if (!villes.includes(datajson[i].name)) {
-    villes.push(datajson[i].name);
-  }
-  i++;
-} while (datajson[i]);
+// const villes = new Array();
+// var i = 0;
+// do {
+//   if (villes.length <= 0) {
+//     villes.push(datajson[i].name.toLowerCase());
+//   } else if (!villes.includes(datajson[i].name.toLowerCase())) {
+//     villes.push(datajson[i].name.toLowerCase());
+//   }
+//   i++;
+// } while (datajson[i]);
+
+
+const villes = new Array(...new Set(Object.entries(datajson).map(x=>x[1].name.toLowerCase())));
+// for(let i=0; i< Object.entries(datajson).length-1; i++){
+//   if (!villes.includes(datajson[i].name.toLowerCase())) {
+//     villes.push(datajson[i].name.toLowerCase());
+//   }
+// };
 
 // Pour tester ce code tout aussi merveilleux
 // console.log(villes);
@@ -41,13 +49,13 @@ form.addEventListener("submit", (e) => {
   metebas();
 });
 
-btn.addEventListener("click", () => {
-  metebas();
-});
+// btn.addEventListener("click", () => {
+//  // metebas();
+// });
 
 function metebas() {
   let town = inputUser.value;
-  if (villes.includes(town)) {
+  if (villes.includes(town.toLowerCase())) {
     let goodURL = requestURL + town;
 
     fetch(goodURL)
