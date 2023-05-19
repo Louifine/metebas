@@ -1,6 +1,6 @@
 body {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   justify-content: center;
   font: 1rem/1.3 "Roboto", sans-serif;
   background: #0a1f44;
@@ -87,4 +87,8 @@ button {
   font-size: 5rem;
   font-weight: bold;
   margin-top: 10px;
+}
+
+h1 {
+  font-size: 30px;
 }

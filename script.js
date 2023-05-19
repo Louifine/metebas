@@ -27,8 +27,9 @@ do {
 //   i++;
 // } while (datajson[i]);
 
-
-const villes = new Array(...new Set(Object.entries(datajson).map(x=>x[1].name.toLowerCase())));
+const villes = new Array(
+  ...new Set(Object.entries(datajson).map((x) => x[1].name.toLowerCase()))
+);
 // for(let i=0; i< Object.entries(datajson).length-1; i++){
 //   if (!villes.includes(datajson[i].name.toLowerCase())) {
 //     villes.push(datajson[i].name.toLowerCase());
@@ -57,6 +58,9 @@ function metebas() {
   let town = inputUser.value;
   if (villes.includes(town.toLowerCase())) {
     let goodURL = requestURL + town;
+    // requestURL += town;
+    // <=>
+    // requestURL = requestURL + town;
 
     fetch(goodURL)
       .then((response) => {
